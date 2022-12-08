@@ -6,7 +6,7 @@
 /*   By: seocha <seocha@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:25:55 by seocha            #+#    #+#             */
-/*   Updated: 2022/12/07 15:23:42 by seocha           ###   ########.fr       */
+/*   Updated: 2022/12/08 09:32:11 by seocha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ int	ft_putchar(char c, int *cnt)
 void	ft_type(char **format, va_list ap, int *cnt)
 {
 	(*format)++;
-	if (!(**format))
-		return ;
-	else if (**format == 'c')
+	if (**format == 'c')
 		ft_char(ap, cnt);
 	else if (**format == 's')
 		ft_str(ap, cnt);
@@ -54,8 +52,6 @@ int	ft_printf(const char *format, ...)
 
 	cnt = 0;
 	va_start(ap, format);
-	if (!format)
-		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
